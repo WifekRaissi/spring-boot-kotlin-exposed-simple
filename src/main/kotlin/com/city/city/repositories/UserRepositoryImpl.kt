@@ -20,13 +20,13 @@ class UserRepositoryImpl: UserRepository {
      // it[id]=user.id
         it[firstName] = user.firstName
         it[lastName] = user.lastName
-       // it[birthDay]=user.birthDay
+        it[birthDay]=user.birthDay
 
 
     }
 
     private fun fromRow(r: ResultRow) =
-            User(r[Users.id],r[Users.firstName], r[Users.lastName])
+            User(r[Users.id],r[Users.firstName], r[Users.lastName], r[Users.birthDay])
 
     override fun create(user: User): User {
         Users.insert(toRow(user))
